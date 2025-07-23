@@ -29,7 +29,7 @@ bash
 -dotnet restore
 -dotnet run
 
-3. Avvia il frontend (React + Vite)
+### 3. Avvia il frontend (React + Vite)
 Assicurati di avere Node.js installato.
 Poi, entra nella cartella del frontend:
 
