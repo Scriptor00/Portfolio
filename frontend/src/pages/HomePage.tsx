@@ -105,9 +105,19 @@ const HomePage: React.FC = () => {
                         Appassionato di backend development, specializzato in C#, React e ASP.NET Core<br />
                         Attualmente in stage presso Exprivia | Studente ITS Digital Maker
                     </motion.p>
-                    <motion.a href="#contact" className="cta-button" whileHover={{ scale: 1.1 }}>
-                        <span>📧</span> Contattami
-                    </motion.a>
+                    <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: 'var(--space-xl)' }}> {/* Nuovo div per raggruppare i pulsanti */}
+                        <motion.a href="#contact" className="cta-button" whileHover={{ scale: 1.1 }}>
+                            <span>📧</span> Contattami
+                        </motion.a>
+                        <motion.a
+                            href="/Carlo_Dicuonzo_CV.pdf" 
+                            download="Carlo_Dicuonzo_CV.pdf" 
+                            className="cta-button"
+                            whileHover={{ scale: 1.1 }}
+                        >
+                            <span>📄</span> Scarica il CV
+                        </motion.a>
+                    </div>
                 </div>
             </motion.section>
 
@@ -174,7 +184,7 @@ const HomePage: React.FC = () => {
                                 <i className="fas fa-envelope"></i> carlodicuonzo@yahoo.com
                             </a>
                             <div className="contact-phone-box">
-                                <i className="fas fa-phone"></i> +39 389 1691621
+                                <i className="fas fa-phone"></i> +39 389 1691521
                             </div>
                             <div className="social-links">
                                 <a href="https://www.linkedin.com/in/carlo-dicuonzo-8b9a26339/" target="_blank" rel="noopener noreferrer" className="social-icon">
