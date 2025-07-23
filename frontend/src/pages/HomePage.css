@@ -1,0 +1,789 @@
+:root {
+    /* Futuristic Color Palette */
+    --neon-primary: #00f2fe;
+    --neon-secondary: #fe00fe;
+    --neon-accent: #00fea4;
+    --cyber-dark: #0f0f1a;
+    --cyber-light: #1a1a2e;
+    --cyber-text: #e2e2f6;
+    --cyber-text-dim: #b8b8d8;
+    --cyber-border: rgba(0, 242, 254, 0.3);
+
+    /* Glow Effects */
+    --glow-primary: 0 0 15px rgba(0, 242, 254, 0.7);
+    --glow-secondary: 0 0 15px rgba(254, 0, 254, 0.5);
+    --glow-accent: 0 0 10px rgba(0, 254, 164, 0.5);
+
+    /* Advanced Gradients */
+    --gradient-diagonal: linear-gradient(45deg, var(--neon-primary), var(--neon-secondary));
+    --gradient-horizontal: linear-gradient(90deg, var(--neon-primary), var(--neon-accent));
+    --gradient-vertical: linear-gradient(180deg, var(--neon-primary), var(--neon-secondary));
+
+    /* Spacing System */
+    --space-3d: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --space-2xl: 4rem; /* Nuovo valore per spaziatura maggiore */
+    --space-3xl: 6rem; /* Nuovo valore per spaziatura ancora maggiore */
+
+    /* Typography */
+    --text-base: 1rem;
+    --text-lg: 1.25rem;
+    --text-xl: 1.5rem;
+    --text-2xl: 2rem;
+    --text-3xl: 2.5rem;
+    --text-4xl: 3.5rem;
+    --text-5xl: 4.5rem;
+
+    /* 3D Effects */
+    --depth-sm: 0 2px 10px rgba(0, 0, 0, 0.3);
+    --depth-md: 0 5px 20px rgba(0, 0, 0, 0.4);
+    --depth-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+    /* Transitions */
+    --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Borders */
+    --border-sm: 1px solid var(--cyber-border);
+    --border-md: 2px solid var(--cyber-border);
+    --border-lg: 3px solid var(--cyber-border);
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-xl: 32px;
+    --radius-full: 100vmax;
+}
+
+/* Cyberpunk Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Cyber';
+    src: url('https://fonts.cdnfonts.com/css/cyberpunk-is-not-dead') format('woff2');
+    font-display: swap;
+}
+
+html {
+    scroll-behavior: smooth;
+    background: var(--cyber-dark);
+}
+
+body {
+    font-family: 'Cyber', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.7;
+    color: var(--cyber-text);
+    background: var(--cyber-dark);
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Holographic Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    background: var(--cyber-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gradient-diagonal);
+    border-radius: var(--radius-full);
+    border: 2px solid var(--cyber-dark);
+}
+
+/* Cyber Grid Background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(rgba(15, 15, 26, 0.9), rgba(15, 15, 26, 0.9)),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="%2300f2fe" stroke-width="0.3" stroke-dasharray="2,2"/></svg>');
+    z-index: -1;
+    opacity: 0.3;
+}
+
+/* Neon Text Effects */
+.neon-text {
+    text-shadow: 0 0 2px var(--neon-primary),
+        0 0 5px var(--neon-primary);
+}
+
+.neon-secondary {
+    text-shadow: 0 0 2px var(--neon-secondary),
+        0 0 5px var(--neon-secondary);
+}
+
+/* Container with Holographic Border */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+    position: relative;
+}
+
+.container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: var(--border-md);
+    border-image: var(--gradient-diagonal) 1;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+/* Cyberpunk Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    padding: var(--space-xl);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center,
+                rgba(0, 242, 254, 0.1) 0%,
+                transparent 70%);
+    animation: rotate 30s linear infinite;
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+    text-align: center;
+    animation: hologramAppear 1.5s var(--transition-slow);
+}
+
+.hero h1 {
+    font-size: clamp(var(--text-3xl), 8vw, var(--text-5xl));
+    margin-bottom: var(--space-md);
+    line-height: 1.1;
+    color: var(--neon-primary);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 3px var(--neon-primary);
+}
+
+.highlight {
+    position: relative;
+    display: inline-block;
+    background: var(--gradient-diagonal);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: none;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--neon-accent);
+    box-shadow: var(--glow-accent);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.6s var(--transition-normal);
+}
+
+.hero h1 .highlight:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.hero .subtitle {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-md);
+    color: var(--neon-primary);
+    text-shadow: 0 0 3px var(--neon-primary);
+    letter-spacing: 1px;
+}
+
+.hero .description {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-xl);
+    line-height: 1.8;
+    color: var(--cyber-text-dim);
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Cyberpunk Button */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    background: rgba(0, 0, 0, 0.3);
+    color: var(--neon-primary);
+    padding: var(--space-md) var(--space-xl);
+    border: var(--border-sm);
+    border-image: var(--gradient-horizontal) 1;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--depth-sm);
+    backdrop-filter: blur(5px);
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+                transparent,
+                rgba(0, 242, 254, 0.2),
+                transparent);
+    transition: var(--transition-slow);
+}
+
+.cta-button:hover {
+    color: var(--cyber-text);
+    box-shadow: 0 0 15px var(--neon-primary), var(--depth-md);
+    transform: translateY(-3px);
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+/* Floating Cyber Elements */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.floating-element {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--neon-primary);
+    box-shadow: 0 0 10px var(--neon-primary),
+        0 0 20px var(--neon-primary);
+    opacity: 0.7;
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-element:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 0s;
+    background: var(--neon-secondary);
+    box-shadow: 0 0 10px var(--neon-secondary),
+        0 0 20px var(--neon-secondary);
+}
+
+.floating-element:nth-child(2) {
+    top: 60%;
+    right: 10%;
+    animation-delay: 2s;
+    width: 8px;
+    height: 8px;
+}
+
+.floating-element:nth-child(3) {
+    bottom: 20%;
+    left: 20%;
+    animation-delay: 4s;
+    background: var(--neon-accent);
+    box-shadow: 0 0 10px var(--neon-accent),
+        0 0 20px var(--neon-accent);
+}
+
+/* Cyber Grid Section */
+.section {
+    padding: var(--space-xl) 0;
+    position: relative;
+    isolation: isolate;
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(rgba(15, 15, 26, 0.9), rgba(15, 15, 26, 0.9)),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="%2300f2fe" stroke-width="0.2" stroke-dasharray="5,5"/></svg>');
+    z-index: -1;
+    opacity: 0.1;
+}
+
+.section-title {
+    text-align: center;
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-xl);
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 var(--space-lg);
+    background: var(--cyber-dark);
+    z-index: 1;
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100vw;
+    height: 2px;
+    background: var(--gradient-horizontal);
+    transform: translateY(-50%);
+    z-index: -1;
+    box-shadow: var(--glow-primary);
+}
+
+/* Cyber Cards */
+.skills-grid,
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+    /* Aumenta il margin-bottom per distanziare dai 3 box */
+    margin-bottom: var(--space-3xl); /* Modificato da margin-top a margin-bottom */
+    margin-top: var(--space-xl);
+}
+
+.skill-card,
+.project-card {
+    background: rgba(26, 26, 46, 0.5);
+    border: var(--border-sm);
+    border-image: var(--gradient-vertical) 1;
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    box-shadow: var(--depth-sm);
+}
+
+.skill-card::before,
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg,
+                rgba(0, 242, 254, 0.05) 0%,
+                transparent 50%,
+                rgba(254, 0, 254, 0.05) 100%);
+    z-index: -1;
+}
+
+.skill-card:hover,
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 242, 254, 0.2), var(--depth-lg);
+    border-image: var(--gradient-diagonal) 1;
+}
+
+.skill-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-md);
+    color: var(--neon-primary);
+    text-shadow: var(--glow-primary);
+}
+
+.skill-title,
+.project-title {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-sm);
+    color: var(--neon-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.skill-description,
+.project-description {
+    color: var(--cyber-text-dim);
+    font-size: var(--text-base);
+    line-height: 1.8;
+}
+
+/* Cyber Button in Cards */
+.btn-go {
+    position: absolute;
+    bottom: var(--space-md);
+    right: var(--space-md);
+    background: var(--gradient-horizontal);
+    color: var(--cyber-dark);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: var(--transition-fast);
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-go:hover {
+    box-shadow: 0 0 15px var(--neon-primary);
+    transform: translateX(5px);
+}
+
+/* Cyber Contact Section */
+.contact-section {
+    background: linear-gradient(180deg, var(--cyber-dark), #0a0a14);
+    position: relative;
+    overflow: hidden;
+    padding: var(--space-xl) 0; /* Ridotto il padding verticale per rendere il footer più piccolo */
+}
+
+.contact-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="%2300f2fe" stroke-width="0.5" stroke-dasharray="10,5"/></svg>');
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.contact-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-links {
+    display: flex; /* Flexbox per allineare i link */
+    flex-direction: column; /* Impila gli elementi verticalmente */
+    gap: var(--space-md); /* Spazio tra i link */
+    align-items: center; /* Centra gli elementi orizzontalmente */
+    margin-top: var(--space-lg); /* Spazio sopra i link */
+}
+
+.contact-email {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    background: var(--gradient-diagonal);
+    color: var(--cyber-dark);
+    padding: var(--space-md) var(--space-xl);
+    border-radius: var(--radius-xl);
+    font-weight: 700;
+    font-size: var(--text-base);
+    box-shadow: var(--glow-primary);
+    text-decoration: none;
+    transition: var(--transition-normal);
+}
+
+.contact-email:hover {
+    box-shadow: 0 0 25px var(--neon-primary);
+}
+
+/* New styles for the non-clickable phone box */
+.contact-phone-box {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    background: rgba(26, 26, 46, 0.5); /* Slightly darker background */
+    color: var(--neon-accent); /* Use an accent color for text */
+    padding: var(--space-md) var(--space-xl);
+    border: var(--border-sm);
+    border-image: var(--gradient-horizontal) 1; /* Horizontal gradient for border */
+    border-radius: var(--radius-xl);
+    font-weight: 700;
+    font-size: var(--text-base);
+    box-shadow: var(--glow-accent); /* Accent glow */
+    cursor: default; /* No pointer cursor */
+    user-select: text; /* Allow text selection */
+    backdrop-filter: blur(5px);
+    transition: var(--transition-normal);
+}
+
+.contact-phone-box:hover {
+    box-shadow: 0 0 25px var(--neon-accent); /* Enhanced glow on hover */
+}
+
+/* Styles for social links container */
+.social-links {
+    display: flex;
+    gap: var(--space-md); /* Spazio tra le icone */
+    margin-top: var(--space-md); /* Spazio sopra le icone */
+}
+
+/* Styles for individual social icons */
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: rgba(26, 26, 46, 0.7);
+    /* Rimosse le seguenti righe per eliminare il bordo */
+    /* border: var(--border-sm); */
+    /* border-image: var(--gradient-diagonal) 1; */
+    border-radius: var(--radius-full);
+    color: var(--neon-primary);
+    font-size: 2rem;
+    text-decoration: none;
+    box-shadow: var(--glow-primary);
+    transition: var(--transition-normal);
+    backdrop-filter: blur(5px);
+}
+
+.social-icon:hover {
+    background: var(--gradient-diagonal);
+    color: var(--cyber-dark);
+    box-shadow: 0 0 20px var(--neon-primary), 0 0 30px var(--neon-secondary);
+    transform: translateY(-5px) scale(1.05);
+}
+
+
+/* Stili per il testo "Parliamo del prossimo progetto" e la descrizione sotto */
+.contact-section p {
+    font-size: var(--text-lg); /* Puoi anche considerare var(--text-base) se vuoi che sia più piccolo */
+    color: var(--cyber-text-dim);
+    margin-bottom: var(--space-sm); /* Spazio tra titolo e descrizione */
+    line-height: 1.6;
+}
+
+.contact-section h2 { /* Presumendo che "Parliamo del prossimo progetto" sia un h2 */
+    font-size: var(--text-2xl); /* Rendi il titolo leggermente più piccolo */
+    color: var(--neon-primary);
+    margin-bottom: var(--space-md);
+    text-shadow: var(--glow-primary);
+}
+
+
+/* Navbar Base */
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: var(--cyber-dark);
+    box-shadow: 0 0 15px var(--neon-primary);
+    z-index: 1000;
+    padding: var(--space-md) var(--space-lg);
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: var(--space-lg);
+}
+
+.navbar li a {
+    color: var(--cyber-text-dim);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: var(--text-lg);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    transition: var(--transition-fast);
+    position: relative;
+}
+
+/* Hover normale */
+.navbar li a:hover {
+    color: var(--neon-accent);
+    text-shadow: 0 0 10px var(--neon-accent);
+}
+
+/* Link attivo - evidenziato durante scroll */
+.navbar li a.active {
+    color: var(--neon-accent);
+    font-weight: 700;
+    text-shadow: 0 0 20px var(--neon-accent);
+}
+
+/* Underline animata link attivo */
+.navbar li a.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: var(--neon-accent);
+    box-shadow: 0 0 15px var(--neon-accent);
+    border-radius: var(--radius-sm);
+    animation: slideIn 0.3s ease forwards;
+}
+
+/* Animazione underline */
+@keyframes slideIn {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Keyframes Animations */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes hologramAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+        filter: blur(4px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(-15px) translateX(10px);
+        opacity: 1;
+    }
+}
+
+/* Cyber Responsive Design */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: clamp(var(--text-2xl), 8vw, var(--text-4xl));
+    }
+
+    .section-title {
+        font-size: var(--text-3xl);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 var(--space-md);
+    }
+
+    .hero {
+        padding: var(--space-lg);
+    }
+
+    .hero .description {
+        max-width: 100%;
+    }
+
+    .skills-grid, .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-section {
+        padding: var(--space-lg) 0; /* Adatta il padding per schermi più piccoli */
+    }
+
+    .contact-email,
+    .contact-phone-box {
+        font-size: var(--text-base); /* Riduci la dimensione del font anche qui */
+    }
+
+    /* Aumenta leggermente le icone social su tablet */
+    .social-icon {
+        width: 55px; /* Aumentato per tablet */
+        height: 55px; /* Aumentato per tablet */
+        font-size: 1.8rem; /* Aumentato per tablet */
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --space-xl: 2rem;
+        --space-lg: 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: var(--text-2xl);
+    }
+
+    .hero .subtitle {
+        font-size: var(--text-lg);
+    }
+
+    .cta-button, .contact-email, .contact-phone-box {
+        padding: var(--space-md) var(--space-lg);
+    }
+
+    .section-title {
+        font-size: var(--text-2xl);
+    }
+
+    .contact-section {
+        padding: var(--space-md) 0; /* Ulteriore riduzione per schermi molto piccoli */
+    }
+
+    .social-icon {
+        width: 50px; /* leggermente più grandi sui telefoni */
+        height: 50px; /* leggermente più grandi sui telefoni */
+        font-size: 1.5rem; /* leggermente più grandi sui telefoni */
+    }
+}
