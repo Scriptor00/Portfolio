@@ -5,7 +5,7 @@ interface ErrorType {
     message: string;
 }
 
-function BackendDeveloper() {
+function DevOpsDeveloper() {
     const [loading, setLoading] = useState(true);
     const [error] = useState<ErrorType | null>(null);
 
@@ -42,11 +42,11 @@ function BackendDeveloper() {
 
                 <style>
                     {`
-          @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-          }
-        `}
+                        @keyframes spin {
+                            0% { transform: rotate(0deg); }
+                            100% { transform: rotate(360deg); }
+                        }
+                    `}
                 </style>
             </div>
         );
@@ -82,7 +82,7 @@ function BackendDeveloper() {
                 paddingBottom: "0.5rem",
                 fontWeight: "700"
             }}>
-                Backend Developer
+                DevOps Developer
             </h1>
 
             <p style={{
@@ -91,8 +91,7 @@ function BackendDeveloper() {
                 color: "#374151",
                 marginBottom: "1rem"
             }}>
-                Mi occupo dello sviluppo lato server utilizzando <strong>C#</strong> e <strong>ASP.NET Core</strong>.
-                In questa sezione trovi una panoramica delle tecnologie e librerie che uso quotidianamente.
+                In questa sezione descrivo le competenze acquisite in ambito <strong>DevOps</strong> durante il mio stage presso <strong>Exprivia</strong> e il percorso ITS presso <strong>Digital Maker</strong>, con particolare attenzione a <strong>Docker</strong> e <strong>SQL Server</strong>.
             </p>
 
             <ul style={{
@@ -102,12 +101,12 @@ function BackendDeveloper() {
                 color: "#374151",
                 marginBottom: "2rem"
             }}>
-                <li><strong>ASP.NET Core</strong> – Web API, MVC, Dependency Injection</li>
-                <li><strong>Entity Framework Core</strong> – Code First, Migrations, LINQ</li>
-                <li><strong>Autenticazione</strong> – ASP.NET Identity, JWT, gestione ruoli e claim</li>
-                <li><strong>Database</strong> – SQL Server, stored procedure, relazioni</li>
-                <li><strong>Docker</strong> – Container per app e database (in fase di integrazione)</li>
-                <li><strong>Altre librerie</strong> – AutoMapper, Stripe, SignalR, Bogus, ClosedXML, Serilog, Swagger</li>
+                <li><strong>SQL Server</strong> – Progettazione DB relazionali, stored procedure, query avanzate con JOIN, GROUP BY, sottoquery.</li>
+                <li><strong>SSMS</strong> – Gestione del database, scripting, manutenzione e debugging.</li>
+                <li><strong>Entity Framework Core</strong> – Integrazione in ASP.NET Core, gestione dei dati via LINQ, migrazioni e mapping relazionale.</li>
+                <li><strong>Docker</strong> – Creazione e gestione di container per applicazioni full-stack (ASP.NET + SQL Server).</li>
+                <li><strong>Dockerfile & Compose</strong> – Scripting per ambienti di sviluppo, gestione volumi e reti.</li>
+                <li><strong>Deployment Locale</strong> – Configurazione ambienti containerizzati per test e sviluppo .</li>
             </ul>
 
             <p style={{
@@ -116,12 +115,11 @@ function BackendDeveloper() {
                 color: "#374151",
                 marginBottom: "2rem"
             }}>
-                Ho applicato queste tecnologie in progetti sviluppati durante il mio stage presso <strong>Exprivia</strong> e il mio percorso ITS presso <strong>Digital Maker</strong>.
-                Puoi esplorarli nella sezione dedicata.
+                Ho applicato queste competenze in progetti reali, dockerizzando applicazioni ASP.NET Core MVC con database SQL Server per renderle facilmente distribuibili e scalabili. Queste esperienze mi hanno permesso di comprendere l’importanza della containerizzazione e dell’infrastruttura automatizzata.
             </p>
 
             <Link
-                to="/gestioneClienti"
+                to="/projects"
                 style={{
                     display: "inline-block",
                     padding: "0.75rem 1.5rem",
@@ -141,4 +139,4 @@ function BackendDeveloper() {
     );
 }
 
-export default BackendDeveloper;
+export default DevOpsDeveloper;

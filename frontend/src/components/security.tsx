@@ -5,7 +5,7 @@ interface ErrorType {
   message: string;
 }
 
-const FrontendDeveloper = () => {
+const SicurezzaAutenticazione = () => {
   const [loading, setLoading] = useState(true);
   const [error] = useState<ErrorType | null>(null);
 
@@ -82,7 +82,7 @@ const FrontendDeveloper = () => {
         paddingBottom: "0.5rem",
         fontWeight: "700"
       }}>
-        Frontend Developer
+        Sicurezza ed Autenticazione
       </h1>
 
       <p style={{
@@ -91,8 +91,7 @@ const FrontendDeveloper = () => {
         color: "#374151",
         marginBottom: "1rem"
       }}>
-        Mi occupo dello sviluppo lato frontend utilizzando principalmente <strong>React</strong> e <strong>Razor Pages</strong>, oltre a tecnologie come <strong>HTML</strong>, <strong>CSS</strong> e <strong>JavaScript</strong>.
-        In questa sezione trovi una panoramica delle tecnologie e librerie che uso quotidianamente.
+        In questa sezione esploro le tecnologie e le pratiche che utilizzo per garantire la sicurezza delle applicazioni web, con un focus particolare su autenticazione, autorizzazione e protezione dei dati.
       </p>
 
       <ul style={{
@@ -102,15 +101,14 @@ const FrontendDeveloper = () => {
         color: "#374151",
         marginBottom: "2rem"
       }}>
-        <li><strong>React</strong> – Componenti funzionali, hook (useState, useEffect)</li>
-        <li><strong>Vite</strong> – Build tool moderno e veloce</li>
-        <li><strong>TypeScript</strong> – Tipizzazione statica per un codice più robusto</li>
-        <li><strong>Tailwind CSS</strong> – Utility-first framework per lo stile</li>
-        <li><strong>React Router</strong> – Routing dinamico tra pagine</li>
-        <li><strong>Axios</strong> – HTTP client per comunicare con il backend</li>
-        <li><strong>React Hook Form</strong> – Gestione avanzata dei form</li>
-        <li><strong>React Icons</strong> – Icone vettoriali facilmente integrabili</li>
-        <li><strong>Framer Motion</strong> (in fase di studio) – Animazioni fluide per UI reattive</li>
+        <li><strong>ASP.NET Core Identity</strong> – Gestione completa degli utenti: registrazione, login, logout, gestione password.</li>
+        <li><strong>Claim-based Authorization</strong> – Autorizzazione basata su <em>claim personalizzati</em> per assegnare ruoli e privilegi specifici.</li>
+        <li><strong>Gestione dei ruoli</strong> – Creazione e assegnazione dinamica di ruoli agli utenti tramite Identity.</li>
+        <li><strong>Token JWT</strong> – Implementazione dell’autenticazione stateless tramite <em>JSON Web Token</em>.</li>
+        <li><strong>Blocco account</strong> – Sistema di sicurezza che blocca l’utente dopo 5 tentativi di login falliti consecutivi.</li>
+        <li><strong>Reset password via email</strong> – Invio automatico del link di recupero con token sicuro e scadenza.</li>
+        <li><strong>Protezione CSRF/XSS</strong> – Utilizzo dei middleware ASP.NET Core per mitigare attacchi comuni.</li>
+        <li><strong>UI/UX migliorata</strong> – Spinner animato durante la fase di login per feedback visivo e controllo della richiesta.</li>
       </ul>
 
       <p style={{
@@ -119,12 +117,12 @@ const FrontendDeveloper = () => {
         color: "#374151",
         marginBottom: "2rem"
       }}>
-        Ho applicato queste tecnologie in progetti sviluppati durante il mio stage presso <strong>Exprivia</strong> e il mio percorso ITS presso <strong>Digital Maker</strong>.
-        Puoi esplorarli nella sezione dedicata.
+        Ho applicato queste tecnologie in progetti sviluppati durante il mio stage presso <strong>Exprivia</strong> e il mio percorso ITS presso <strong>Digital Maker</strong>. Alcune funzionalità, come il blocco account e lo spinner durante il login, sono state sviluppate su mia iniziativa per migliorare sicurezza ed esperienza utente.
+        Puoi esplorarle nella sezione dedicata.
       </p>
 
       <Link
-        to="/giochiPreferiti"
+        to="/projects"
         style={{
           display: "inline-block",
           padding: "0.75rem 1.5rem",
@@ -144,4 +142,4 @@ const FrontendDeveloper = () => {
   );
 };
 
-export default FrontendDeveloper;
+export default SicurezzaAutenticazione;

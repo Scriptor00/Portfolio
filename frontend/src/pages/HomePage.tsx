@@ -132,11 +132,13 @@ const HomePage: React.FC = () => {
                             <span className="btn-go">Vai →</span>
                         </Link>
 
-                        <div className="skill-card animate-on-scroll">
+                        <Link to="/devops"  className="skill-card animate-on-scroll">
                             <span className="skill-icon">⚙️</span>
                             <h3 className="skill-title">DevOps & Database</h3>
                             <p className="skill-description">Docker per containerizzazione e SQL Server per gestione dati</p>
-                        </div>
+                            <span className="btn-go">Vai →</span>
+                        </Link>
+                        
 
                         <Link to="/frontend" className="skill-card animate-on-scroll" onClick={handleCardClick}>
                             <span className="skill-icon">🧩</span>
@@ -145,11 +147,12 @@ const HomePage: React.FC = () => {
                             <span className="btn-go">Vai →</span>
                         </Link>
 
-                        <div className="skill-card animate-on-scroll">
+                        <Link to="/security" className="skill-card animate-on-scroll">
                             <span className="skill-icon">🔐</span>
                             <h3 className="skill-title">Security & Auth</h3>
                             <p className="skill-description">Autenticazione sicura con JWT e Identity</p>
-                        </div>
+                            <span className="btn-go">Vai →</span>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -158,14 +161,18 @@ const HomePage: React.FC = () => {
                 <div className="container">
                     <h2 className="section-title">Progetti in evidenza</h2>
                     <div className="projects-grid">
-                        <div className="project-card animate-on-scroll">
+                        <Link to="/gestioneClienti" className="project-card animate-on-scroll">
                             <h3 className="project-title"><span>📊</span> Sistema Gestione Ordini & Clienti</h3>
                             <p className="project-description">Applicazione gestionale con ASP.NET MVC e Razor Pages...</p>
-                        </div>
-                        <div className="project-card animate-on-scroll">
+                            <span className="btn-go">Vai →</span>
+                        </Link>
+
+                        <Link to="/giochiPreferiti" className="project-card animate-on-scroll">
                             <h3 className="project-title"><span>🎮</span> Collezione personale di videogames</h3>
-                            <p className="project-description">Piattaforma web per catalogare e gestire collezioni...</p>
-                        </div>
+                            <p className="project-description">Piattaforma web per catalogare e gestire collezioni, sviluppata in .NET Core e React...</p>
+                             <span className="btn-go">Vai →</span>
+                        </Link>
+                        
                         <div className="project-card animate-on-scroll">
                             <h3 className="project-title"><span>📱</span> Social Media App</h3>
                             <p className="project-description">App responsive simile a Instagram, sviluppata in React.js...</p>
