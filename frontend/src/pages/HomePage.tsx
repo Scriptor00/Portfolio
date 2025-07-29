@@ -173,10 +173,11 @@ const HomePage: React.FC = () => {
                              <span className="btn-go">Vai →</span>
                         </Link>
                         
-                        <div className="project-card animate-on-scroll">
+                        <Link to="/socialMedia" className="project-card animate-on-scroll">
                             <h3 className="project-title"><span>📱</span> Social Media App</h3>
-                            <p className="project-description">App responsive simile a Instagram, sviluppata in React.js...</p>
-                        </div>
+                            <p className="project-description">App responsive simile a Instagram, sviluppata in React Native...</p>
+                            <span className="btn-go">Vai →</span>
+                        </Link>
                     </div>
                 </div>
             </motion.section>

@@ -56,18 +56,18 @@ function ClassificatoreGiochi() {
 
             <h2 style={{ fontSize: "1.5rem", marginBottom: "0.5rem", color: "#4f46e5" }}>✅ Funzionalità principali</h2>
             <ul style={{ listStyleType: "square", paddingLeft: "1.5rem", color: "#374151", marginBottom: "2rem" }}>
-                <li>Aggiunta manuale di giochi con cover, stato e commenti</li>
+                <li>Aggiunta manuale di giochi con cover, stato e commenti, con inserimento nel DB tramite API o tramite interfaccia grafica</li>
                 <li>Visualizzazione dettagli gioco con commento personale</li>
                 <li>Possibilità di modificare dettagli gioco</li>
                 <li>Classificazione per: Giocato / In Corso / Da Giocare</li>
                 <li>Possibilità di modificare il gioco da "Da giocare" a "Giocato"</li>
-                <li>Filtro e ricerca giochi</li>
+                <li>Filtro e ricerca giochi per nome, genere, data di pubblicazione</li>
                 <li>UI responsive per dispositivi mobili</li>
             </ul>
 
             <h2 style={{ fontSize: "1.5rem", marginBottom: "1rem", color: "#4f46e5" }}>🖼️ Galleria del progetto</h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "1rem", marginBottom: "2rem" }}>
-                {["/screenshots/games-dashboard.png", "/screenshots/add-game.png", "/screenshots/game-details.png"].map((src, i) => (
+                {["/screenshots/home.png", "/screenshots/completati.png", "/screenshots/dettaglio.png", "/screenshots/aggiungi.png"].map((src, i) => (
                     <img
                         key={i}
                         src={src}
