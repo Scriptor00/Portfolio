@@ -105,13 +105,13 @@ const HomePage: React.FC = () => {
                         Appassionato di backend development, specializzato in C#, React e ASP.NET Core<br />
                         Attualmente in stage presso Exprivia | Studente ITS Digital Maker
                     </motion.p>
-                    <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: 'var(--space-xl)' }}> {/* Nuovo div per raggruppare i pulsanti */}
+                    <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: 'var(--space-xl)' }}>
                         <motion.a href="#contact" className="cta-button" whileHover={{ scale: 1.1 }}>
                             <span>📧</span> Contattami
                         </motion.a>
                         <motion.a
-                            href="/Carlo_Dicuonzo_CV.pdf" 
-                            download="Carlo_Dicuonzo_CV.pdf" 
+                            href="/Carlo_Dicuonzo_CV.pdf"
+                            download="Carlo_Dicuonzo_CV.pdf"
                             className="cta-button"
                             whileHover={{ scale: 1.1 }}
                         >
@@ -132,15 +132,14 @@ const HomePage: React.FC = () => {
                             <span className="btn-go">Vai →</span>
                         </Link>
 
-                        <Link to="/devops"  className="skill-card animate-on-scroll">
+                        <Link to="/devops" className="skill-card animate-on-scroll">
                             <span className="skill-icon">⚙️</span>
                             <h3 className="skill-title">DevOps & Database</h3>
                             <p className="skill-description">Docker per containerizzazione e SQL Server per gestione dati</p>
                             <span className="btn-go">Vai →</span>
                         </Link>
-                        
 
-                        <Link to="/frontend" className="skill-card animate-on-scroll" onClick={handleCardClick}>
+                        <Link to="/frontend" className="skill-card animate-on-scroll">
                             <span className="skill-icon">🧩</span>
                             <h3 className="skill-title">Frontend Development</h3>
                             <p className="skill-description">React, Vite, TypeScript, HTML/CSS, Razor Pages</p>
@@ -163,20 +162,33 @@ const HomePage: React.FC = () => {
                     <div className="projects-grid">
                         <Link to="/gestioneClienti" className="project-card animate-on-scroll">
                             <h3 className="project-title"><span>📊</span> Sistema Gestione Ordini & Clienti</h3>
-                            <p className="project-description">Applicazione gestionale con ASP.NET MVC e Razor Pages...</p>
+                            <p className="project-description">Applicazione gestionale completa realizzata durante lo stage presso Exprivia, basata su ASP.NET MVC e Razor Pages.</p>
                             <span className="btn-go">Vai →</span>
                         </Link>
 
                         <Link to="/giochiPreferiti" className="project-card animate-on-scroll">
                             <h3 className="project-title"><span>🎮</span> Collezione personale di videogames</h3>
-                            <p className="project-description">Piattaforma web per catalogare e gestire collezioni, sviluppata in .NET Core e React...</p>
-                             <span className="btn-go">Vai →</span>
+                            <p className="project-description">Piattaforma web per catalogare giochi in base allo stato (giocato, in corso, da iniziare), sviluppata in React + .NET Core.</p>
+                            <span className="btn-go">Vai →</span>
                         </Link>
-                        
+                    </div>
+                </div>
+            </motion.section>
+
+            <motion.section className="projects-section" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+                <div className="container">
+                    <h2 className="section-title">Altri progetti</h2>
+                    <div className="projects-grid">
                         <Link to="/socialMedia" className="project-card animate-on-scroll">
                             <h3 className="project-title"><span>📱</span> Social Media App</h3>
-                            <p className="project-description">App responsive simile a Instagram, sviluppata in React Native...</p>
-                            <span className="btn-go">Vai →</span>
+                            <p className="project-description">App mobile in stile Instagram sviluppata in React Native.</p>
+                            <span className="btn-go">Scopri →</span>
+                        </Link>
+
+                        <Link to="/consoleApp"    className="project-card animate-on-scroll">
+                            <h3 className="project-title"><span>🖥️</span> Gestione Ordini (Console App)</h3>
+                            <p className="project-description">Applicazione interamente su console sviluppata in C# con ASP.NET Core per la gestione di clienti, prodotti e ordini.</p>
+                            <span className="btn-go">Scopri →</span>
                         </Link>
                     </div>
                 </div>

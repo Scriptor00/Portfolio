@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 interface ErrorType {
@@ -73,6 +73,7 @@ function SocialMedia() {
             backgroundColor: "#f9fafb",
             borderRadius: "12px",
             boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
+            textAlign: "center",
         }}>
             <h1 style={{
                 fontSize: "2.5rem",
@@ -99,7 +100,11 @@ function SocialMedia() {
                 fontSize: "1.05rem",
                 lineHeight: "1.8",
                 color: "#374151",
-                marginBottom: "2rem"
+                marginBottom: "2rem",
+                textAlign: "left",
+                maxWidth: "600px",
+                marginLeft: "auto",
+                marginRight: "auto",
             }}>
                 <li><strong>Home Feed</strong> – Visualizzazione dei post pubblicati dagli utenti</li>
                 <li><strong>Profilo personale</strong> – Pagina dedicata al proprio profilo con post e informazioni</li>
@@ -118,21 +123,11 @@ function SocialMedia() {
                 Questo progetto mi ha permesso di esplorare la logica delle app mobile moderne, consolidare le conoscenze su React Native e approfondire la gestione dello stato globale e locale.
             </p>
 
-            {/* FOTO DEL PROGETTO */}
-            <div style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: "1rem",
-                marginBottom: "2rem",
-            }}>
-                <img src="/screenshots/social1.png" alt="Feed principale" style={{ width: "100%", borderRadius: "8px" }} />
-                <img src="/screenshots/social2.png" alt="Schermata profilo" style={{ width: "100%", borderRadius: "8px" }} />
-                <img src="/screenshots/social3.png" alt="Aggiunta post" style={{ width: "100%", borderRadius: "8px" }} />
-                <img src="/screenshots/social4.png" alt="Sezione like" style={{ width: "100%", borderRadius: "8px" }} />
-            </div>
-
-            <Link
-                to="/"
+            {/* Pulsante GitHub */}
+            <a
+                href="https://github.com/Scriptor00/istragram" 
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
                     display: "inline-block",
                     padding: "0.75rem 1.5rem",
@@ -142,9 +137,30 @@ function SocialMedia() {
                     fontWeight: "600",
                     textDecoration: "none",
                     transition: "background-color 0.3s ease",
+                    marginBottom: "1rem",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#4f46e5")}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#6366f1")}
+                onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#4f46e5")}
+                onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#6366f1")}
+            >
+                🔍 Visualizza il codice su GitHub
+            </a>
+
+            <br />
+
+            <Link
+                to="/"
+                style={{
+                    display: "inline-block",
+                    padding: "0.75rem 1.5rem",
+                    backgroundColor: "#4f46e5",
+                    color: "#ffffff",
+                    borderRadius: "8px",
+                    fontWeight: "600",
+                    textDecoration: "none",
+                    transition: "background-color 0.3s ease",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#3b3bb0")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#4f46e5")}
             >
                 Torna alla Home
             </Link>

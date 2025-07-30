@@ -78,15 +78,46 @@ function ClassificatoreGiochi() {
                 ))}
             </div>
 
-            <Link to="/" style={{ display: "inline-block", backgroundColor: "#4f46e5", color: "#fff", padding: "0.75rem 1.5rem", borderRadius: "8px", textDecoration: "none", fontWeight: "600", transition: "background-color 0.3s" }}>
+            {/* Pulsante GitHub sopra "Torna alla Home" */}
+            <a
+                href="https://github.com/Scriptor00/Giochi"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                    display: "inline-block",
+                    padding: "0.75rem 1.5rem",
+                    backgroundColor: "#6366f1",
+                    color: "#ffffff",
+                    borderRadius: "8px",
+                    fontWeight: "600",
+                    textDecoration: "none",
+                    transition: "background-color 0.3s ease",
+                    marginBottom: "1rem",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#4f46e5")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#6366f1")}
+            >
+                🔍 Guarda il codice su GitHub
+            </a>
+
+            <br />
+
+            <Link to="/" style={{ display: "inline-block", backgroundColor: "#4f46e5", color: "#fff", padding: "0.75rem 1.5rem", borderRadius: "8px", textDecoration: "none", fontWeight: "600", transition: "background-color 0.3s" }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#3b3bb0")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#4f46e5")}
+            >
                 Torna alla Home
             </Link>
 
             {selectedImage && (
-                <div style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "100%", backgroundColor: "rgba(0, 0, 0, 0.8)", display: "flex", justifyContent: "center", alignItems: "center", zIndex: 1000 }} onClick={closeModal}>
+                <div
+                    onClick={closeModal}
+                    style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "100%", backgroundColor: "rgba(0, 0, 0, 0.8)", display: "flex", justifyContent: "center", alignItems: "center", zIndex: 1000, cursor: "pointer" }}
+                >
                     <img
                         src={selectedImage}
                         alt="Immagine ingrandita"
+                        onClick={e => e.stopPropagation()}
                         style={{ maxWidth: "90%", maxHeight: "90%", borderRadius: "10px", boxShadow: "0 0 20px rgba(0, 0, 0, 0.5)", objectFit: "contain" }}
                     />
                 </div>

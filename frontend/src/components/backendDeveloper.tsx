@@ -73,6 +73,7 @@ function BackendDeveloper() {
             backgroundColor: "#f9fafb",
             borderRadius: "12px",
             boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
+            textAlign: "center"
         }}>
             <h1 style={{
                 fontSize: "2.5rem",
@@ -100,7 +101,11 @@ function BackendDeveloper() {
                 fontSize: "1.05rem",
                 lineHeight: "1.8",
                 color: "#374151",
-                marginBottom: "2rem"
+                marginBottom: "2rem",
+                textAlign: "left",
+                maxWidth: "600px",
+                marginLeft: "auto",
+                marginRight: "auto",
             }}>
                 <li><strong>ASP.NET Core</strong> – Web API, MVC, Dependency Injection</li>
                 <li><strong>Entity Framework Core</strong> – Code First, Migrations, LINQ</li>
@@ -131,11 +136,32 @@ function BackendDeveloper() {
                     fontWeight: "600",
                     textDecoration: "none",
                     transition: "background-color 0.3s ease",
+                    marginBottom: "1rem",
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#4f46e5")}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#6366f1")}
             >
                 🔍 Vedi i miei progetti
+            </Link>
+
+            <br />
+
+            <Link
+                to="/"
+                style={{
+                    display: "inline-block",
+                    padding: "0.75rem 1.5rem",
+                    backgroundColor: "#4f46e5",
+                    color: "#ffffff",
+                    borderRadius: "8px",
+                    fontWeight: "600",
+                    textDecoration: "none",
+                    transition: "background-color 0.3s ease",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#3b3bb0")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#4f46e5")}
+            >
+                ← Torna alla Home
             </Link>
         </div>
     );

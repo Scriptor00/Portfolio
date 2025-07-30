@@ -8,6 +8,7 @@ import SicurezzaAutenticazione from "./components/security";
 import GestioneClienti from "./components/gestioneClienti";
 import GiochiPreferiti from "./components/giochiPreferiti";
 import SocialMedia from "./components/socialMedia";
+import ConsoleApp from "./components/consoleApp";
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/gestioneClienti" element={<GestioneClienti />} />
         <Route path="/giochiPreferiti" element={<GiochiPreferiti />} />
         <Route path="/socialMedia" element={<SocialMedia />} />
+        <Route path="/consoleApp" element={<ConsoleApp />} />
       </Routes>
     </Router>
   );

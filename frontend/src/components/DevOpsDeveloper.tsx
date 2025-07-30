@@ -73,6 +73,7 @@ function DevOpsDeveloper() {
             backgroundColor: "#f9fafb",
             borderRadius: "12px",
             boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
+            textAlign: "center"
         }}>
             <h1 style={{
                 fontSize: "2.5rem",
@@ -99,14 +100,18 @@ function DevOpsDeveloper() {
                 fontSize: "1.05rem",
                 lineHeight: "1.8",
                 color: "#374151",
-                marginBottom: "2rem"
+                marginBottom: "2rem",
+                textAlign: "left",
+                maxWidth: "600px",
+                marginLeft: "auto",
+                marginRight: "auto",
             }}>
                 <li><strong>SQL Server</strong> – Progettazione DB relazionali, stored procedure, query avanzate con JOIN, GROUP BY, sottoquery.</li>
                 <li><strong>SSMS</strong> – Gestione del database, scripting, manutenzione e debugging.</li>
                 <li><strong>Entity Framework Core</strong> – Integrazione in ASP.NET Core, gestione dei dati via LINQ, migrazioni e mapping relazionale.</li>
                 <li><strong>Docker</strong> – Creazione e gestione di container per applicazioni full-stack (ASP.NET + SQL Server).</li>
                 <li><strong>Dockerfile & Compose</strong> – Scripting per ambienti di sviluppo, gestione volumi e reti.</li>
-                <li><strong>Deployment Locale</strong> – Configurazione ambienti containerizzati per test e sviluppo .</li>
+                <li><strong>Deployment Locale</strong> – Configurazione ambienti containerizzati per test e sviluppo.</li>
             </ul>
 
             <p style={{
@@ -119,7 +124,7 @@ function DevOpsDeveloper() {
             </p>
 
             <Link
-                to="/projects"
+                to="/gestioneClienti"
                 style={{
                     display: "inline-block",
                     padding: "0.75rem 1.5rem",
@@ -129,11 +134,32 @@ function DevOpsDeveloper() {
                     fontWeight: "600",
                     textDecoration: "none",
                     transition: "background-color 0.3s ease",
+                    marginBottom: "1rem",
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#4f46e5")}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#6366f1")}
             >
                 🔍 Vedi i miei progetti
+            </Link>
+
+            <br />
+
+            <Link
+                to="/"
+                style={{
+                    display: "inline-block",
+                    padding: "0.75rem 1.5rem",
+                    backgroundColor: "#4f46e5",
+                    color: "#ffffff",
+                    borderRadius: "8px",
+                    fontWeight: "600",
+                    textDecoration: "none",
+                    transition: "background-color 0.3s ease",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#3b3bb0")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#4f46e5")}
+            >
+                ← Torna alla Home
             </Link>
         </div>
     );

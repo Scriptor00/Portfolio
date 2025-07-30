@@ -8,7 +8,7 @@ interface ErrorType {
 function GestioneClienti() {
     const [loading, setLoading] = useState(true);
     const [error] = useState<ErrorType | null>(null);
-    const [selectedImage, setSelectedImage] = useState<string | null>(null); // Nuovo stato per l'immagine selezionata
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -18,12 +18,10 @@ function GestioneClienti() {
         return () => clearTimeout(timer);
     }, []);
 
-    // Funzione per aprire il modal con l'immagine cliccata
     const openModal = (src: string) => {
         setSelectedImage(src);
     };
 
-    // Funzione per chiudere il modal
     const closeModal = () => {
         setSelectedImage(null);
     };
@@ -48,9 +46,7 @@ function GestioneClienti() {
                     animation: "spin 1s linear infinite",
                     marginBottom: "1rem",
                 }} />
-
                 Caricamento in corso...
-
                 <style>
                     {`
                     @keyframes spin {
@@ -132,7 +128,7 @@ function GestioneClienti() {
                 <li>System.Net.Mail per l'invio di email</li>
             </ul>
 
-            <h2 style={{ fontSize: "1.5rem", marginBottom: "0.5rem", color: "#4f46e5" }}>
+            <h2 style={{ fontSize: "1.5rem", marginBottom: "1rem", color: "#4f46e5" }}>
                 ✅ Funzionalità principali
             </h2>
             <ul style={{
@@ -165,12 +161,11 @@ function GestioneClienti() {
                     { src: "/screenshots/clienti.png", alt: "Gestione clienti" },
                     { src: "/screenshots/carrello.png", alt: "Pagina carrello" },
                     { src: "/screenshots/dashboard.png", alt: "Dashboard" },
-                    { src: "/screenshots/pannello.png", alt: "Pannello Admnin" },
+                    { src: "/screenshots/pannello.png", alt: "Pannello Admin" },
                     { src: "/screenshots/newCliente.png", alt: "Nuovo Cliente" },
                     { src: "/screenshots/modCliente.png", alt: "Modifica Cliente" },
                     { src: "/screenshots/catalogo.png", alt: "Catalogo Prodotti" },
                     { src: "/screenshots/pagamento.png", alt: "Pagamento Stripe" }
-
                 ].map((img, index) => (
                     <img
                         key={index}
@@ -183,12 +178,36 @@ function GestioneClienti() {
                             borderRadius: "10px",
                             border: "1px solid #d1d5db",
                             boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)",
-                            cursor: "pointer" // Aggiunge un cursore a mano per indicare che è cliccabile
+                            cursor: "pointer"
                         }}
-                        onClick={() => openModal(img.src)} // Gestore del click per aprire il modal
+                        onClick={() => openModal(img.src)}
                     />
                 ))}
             </div>
+
+            {/* Pulsante GitHub sopra "Torna alla Home" */}
+            <a
+                href="https://github.com/Scriptor00/GestioneClienti"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                    display: "inline-block",
+                    padding: "0.75rem 1.5rem",
+                    backgroundColor: "#6366f1",
+                    color: "#ffffff",
+                    borderRadius: "8px",
+                    fontWeight: "600",
+                    textDecoration: "none",
+                    transition: "background-color 0.3s ease",
+                    marginBottom: "1rem",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#4f46e5")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#6366f1")}
+            >
+                🔍 Guarda il codice su GitHub
+            </a>
+
+            <br />
 
             <Link to="/" style={{
                 display: "inline-block",
@@ -199,35 +218,42 @@ function GestioneClienti() {
                 textDecoration: "none",
                 fontWeight: "600",
                 transition: "background-color 0.3s",
-            }}>
+            }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#3b3bb0")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#4f46e5")}
+            >
                 Torna alla Home
             </Link>
 
             {/* Modal per l'ingrandimento dell'immagine */}
             {selectedImage && (
-                <div style={{
-                    position: "fixed",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                    backgroundColor: "rgba(0, 0, 0, 0.8)",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    zIndex: 1000,
-                }} onClick={closeModal}> 
+                <div
+                    onClick={closeModal}
+                    style={{
+                        position: "fixed",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        backgroundColor: "rgba(0, 0, 0, 0.8)",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        zIndex: 1000,
+                        cursor: "pointer",
+                    }}
+                >
                     <img
                         src={selectedImage}
                         alt="Immagine ingrandita"
+                        onClick={e => e.stopPropagation()}
                         style={{
                             maxWidth: "90%",
                             maxHeight: "90%",
                             borderRadius: "10px",
                             boxShadow: "0 0 20px rgba(0, 0, 0, 0.5)",
-                            objectFit: "contain", 
+                            objectFit: "contain",
                         }}
-                        // onClick={(e) => e.stopPropagation()} // Impedisce la chiusura del modal cliccando sull'immagine
                     />
                 </div>
             )}

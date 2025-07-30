@@ -345,7 +345,7 @@ body::before {
 .section-title {
     text-align: center;
     font-size: var(--text-4xl);
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-md); /* ridotto da var(--space-xl) */
     position: relative;
     display: inline-block;
     left: 50%;
@@ -374,9 +374,8 @@ body::before {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--space-lg);
-    /* Aumenta il margin-bottom per distanziare dai 3 box */
-    margin-bottom: var(--space-3xl); /* Modificato da margin-top a margin-bottom */
-    margin-top: var(--space-xl);
+    margin-bottom: var(--space-xl); /* ridotto da var(--space-3xl) */
+    margin-top: var(--space-md); /* ridotto da var(--space-xl) */
 }
 
 .skill-card,
@@ -496,7 +495,6 @@ body::before {
     align-items: center; /* Centra gli elementi orizzontalmente */
     margin-top: var(--space-lg); /* Spazio sopra i link */
 }
-
 .contact-email {
     display: inline-flex;
     align-items: center;
